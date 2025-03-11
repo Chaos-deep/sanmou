@@ -5,10 +5,10 @@ import pytesseract
 import cv2
 import re
 import random
-
 import time
- 
-# 使用设备唯一标志码链接设备，其中9phqaetw是通过adb获取的设备标志码
+
+
+# 使用设备唯一标志码链接设备，其中是通过127.0.0.1:16384获取的设备标志码
 d = u2.connect('127.0.0.1:16384')
 d.screenshot().save("./imgs/screenshot.png")
 
@@ -448,17 +448,17 @@ def main():
             print("Alliance_coordinates文件已被清空")
             pass
         
-        get_Alliance_marker_info("./documents/Alliance_coordinates.txt")#获取同盟坐标
+        #get_Alliance_marker_info("./documents/Alliance_coordinates.txt")#获取同盟坐标
         
         #get_personal_marker_info("./documents/mark_informs.txt")#获取个人坐标
         
-        respond_file_data("./documents/Alliance_coordinates.txt")
-        # respond_file_data("./documents/mark_informs.txt")
-        # respond_file_data("./documents/mark_customize.txt")
+        # respond_file_data("./documents/Alliance_coordinates.txt")#执行盟标命令
+        # respond_file_data("./documents/mark_informs.txt")#执行个人收藏命令
+        respond_file_data("./documents/mark_customize.txt")#执行自定义命令
         #respond_command("3行军",1294,188)
 
         
-        i+=1
+        i += 1
         
 if __name__ == "__main__":
     main()
